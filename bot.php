@@ -14,7 +14,8 @@ while (true) {
 			// iterate 2nd inbox
 			$pending_inbox = json_decode($pending_inbox);
 			foreach ($pending_inbox->inbox->threads as $thread){
-				msgHandler($ig, $dflow, $thread);
+				$ig->direct->sendText(array('thread' => $thread->thread_id), 'Welcome to my profile :)');
+				//msgHandler($ig, $dflow, $thread);
 			}
 			// iterate inbox
 			$inbox = json_decode($inbox);
