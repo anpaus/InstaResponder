@@ -10,10 +10,11 @@ while (true) {
 	    $ig->login($username, $password);
 			$pending_inbox = $ig->direct->getPendingInbox();
 			$inbox = $ig->direct->getInbox();
-			sleep(1);
+			sleep(60);
 			// iterate 2nd inbox
 			$pending_inbox = json_decode($pending_inbox);
 			foreach ($pending_inbox->inbox->threads as $thread){
+				echo 'Pending: '.$thread->thread_id.'\n';
 				$ig->direct->sendText(array('thread' => $thread->thread_id), 'Welcome to my profile :)');
 				//msgHandler($ig, $dflow, $thread);
 			}
@@ -22,6 +23,7 @@ while (true) {
 			foreach ($inbox->inbox->threads as $thread){
 				// check if the last msg is from our userid
 				if ($thread->items{0}->user_id != '1985704581'){
+					echo $thread->thread_id.'\n';
 					// handle msg and send response from DialogFlow
 					//msgHandler($ig, $dflow, $thread);
 					$ig->direct->sendText(array('thread' => $thread->thread_id), 'Welcome to my profile :)');
