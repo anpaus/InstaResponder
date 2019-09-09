@@ -3,7 +3,7 @@
 require __DIR__.'/../vendor/autoload.php';
 
 /////// IG CONFIG ///////
-$username = getenv('USER_NAME')
+$username = getenv('USER_NAME');
 $password = getenv('USER_PASS');
 $debug = false;
 $truncatedDebug = false;
