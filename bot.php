@@ -20,7 +20,7 @@ while (true) {
 			$inbox = json_decode($inbox);
 			foreach ($inbox->inbox->threads as $thread){
 				// check if the last msg is from our userid
-				if ($thread->items{0}->user_id != '6361282126'){
+				if ($thread->items{0}->user_id != '1985704581'){
 					// handle msg and send response from DialogFlow
 					//msgHandler($ig, $dflow, $thread);
 					$ig->direct->sendText(array('thread' => $thread->thread_id), 'Welcome to my profile :)');
