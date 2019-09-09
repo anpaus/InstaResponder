@@ -22,8 +22,8 @@ while (true) {
 				// check if the last msg is from our userid
 				if ($thread->items{0}->user_id != '6361282126'){
 					// handle msg and send response from DialogFlow
-					msgHandler($ig, $dflow, $thread);
-					//$ig->direct->sendText(array('thread' => $thread->thread_id), 'We are on maintenance :)');
+					//msgHandler($ig, $dflow, $thread);
+					$ig->direct->sendText(array('thread' => $thread->thread_id), 'Welcome to my profile :)');
 				}
 			}
 	} catch (\Exception $e) {
