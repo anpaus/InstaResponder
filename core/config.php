@@ -3,8 +3,8 @@
 require __DIR__.'/../vendor/autoload.php';
 
 /////// IG CONFIG ///////
-$username = 'username';
-$password = 'password';
+$username = getenv('USER_NAME')
+$password = getenv('USER_PASS');
 $debug = false;
 $truncatedDebug = false;
 /////// DIALOGFLOW CONFIG ///////
